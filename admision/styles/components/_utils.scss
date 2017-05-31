@@ -1,0 +1,360 @@
+/*==========  VARIABLES  ==========*/
+
+$fontsPath: '../fonts/';
+$imagesPath: '../images/';
+
+// Definiendo tipografia
+$fontRoboto : 'Roboto', sans-serif;
+$fontRobotoCond : 'Roboto Condensed', sans-serif;
+$fontOswald : 'Oswald', sans-serif;
+$fontSerif: 'Georgia', serif;
+
+// Definiendo tamanos tipograficos
+$fontMini : 11px;
+$fontTiny : 12px;
+$fontSmall : 14px;
+$fontRegular : 16px;
+$fontRegularBig : 18px;
+$fontRegularBigger : 20px;
+$fontBig : 24px;
+$fontBigger : 28px;
+$fontTall : 32px;
+$fontTaller : 36px;
+$fontReallyBig : 40px;
+$fontHuge : 44px;
+
+
+// Definiendo colores
+$color_corporativo : #00483a;
+$color_corporativo_dark : #003b30;
+$color_corporativo_light : #006a56;
+$color_corporativo_lighter : #bfd0c0;
+$color_corporativo--special: #D9E7E3;
+
+$color_primario : #008b83;
+$color_primario_dark : #467c7a;
+$color_primario_light : #00aaa4;
+$color_primario_lighter : #b4d6d5;
+
+$color_secundario : #ff9900;
+$color_secundario_dark : #d76900;
+$color_secundario_light : lighten($color_secundario, 20%);
+
+$color_complementario : #9cb93f;
+$color_complementario_dark : darken($color_complementario, 20%);
+$color_complementario_light : lighten($color_complementario, 20%);
+
+$color_neutral : #21b24b;
+$color_neutral_dark : darken($color_neutral, 20%);
+$color_neutral_light : lighten($color_neutral, 20%);
+
+$color_neutralalt : #676767;
+$color_neutralalt_dark : #676767;
+$color_neutralalt_light : #676767;
+
+$color_newbermuda: #4B529B;
+$color_newbermuda_dark : darken($color_newbermuda, 20%);
+$color_newbermuda_light : lighten($color_newbermuda, 20%);
+
+$blanco : #fff;
+$negro : #000;
+$gris_dark : #333333;
+$gris : #5c666f;
+$gris_light : #9c9c9c;
+$gris_lighter : #EEEEEE;
+$gris_lightalt : #DDDDDD;
+
+$color_error : #FF1C00;
+
+$color_especificas: 	#249b93 !default;
+$color_especificas__hover: #20867F !default;
+$color_basica:			#8bad30 !default;
+$color_basica__hover:			#7A9829 !default;
+$color_general: 		#26a53a !default;	
+$color_general__hover: 		#229535 !default;	
+$color_blacky: 			#252525 !default;
+
+// colores extras
+$color_noticias : #9E2B57;
+
+// definiendo los patrones y texturas
+$pattern_generico : url( $imagesPath + 'fondos/pattern.jpg' );
+
+// colores sociales
+$twitterColor : #55acee;
+$twitterColor_dark : darken( $twitterColor, 10%);
+$twitterColor_darker : darken( $twitterColor, 15%);
+$twitterColor_light : lighten( $twitterColor, 10%);
+$twitterColor_lighter : lighten( $twitterColor, 15%);
+
+$facebookColor : #3b5998;
+$facebookColor_dark : darken( $facebookColor, 10%);
+$facebookColor_darker : darken( $facebookColor, 15%);
+$facebookColor_light : lighten( $facebookColor, 10%);
+$facebookColor_lighter : lighten( $facebookColor, 15%);
+
+$googleColor : #df4a32;
+$googleColor_dark : darken( $googleColor, 10%);
+$googleColor_darker : darken( $googleColor, 15%);
+$googleColor_light : lighten( $googleColor, 10%);
+$googleColor_lighter : lighten( $googleColor, 15%);
+
+$linkedInColor : #0077b5;
+$linkedInColor_dark : darken( $linkedInColor, 10%);
+$linkedInColor_darker : darken( $linkedInColor, 15%);
+$linkedInColor_light : lighten( $linkedInColor, 10%);
+$linkedInColor_lighter : lighten( $linkedInColor, 15%);
+
+$issuuColor : #ee5226;
+$issuuColor_dark : darken( $issuuColor, 10%);
+$issuuColor_darker : darken( $issuuColor, 15%);
+$issuuColor_light : lighten( $issuuColor, 10%);
+$issuuColor_lighter : lighten( $issuuColor, 15%);
+
+$youtubeColor : #de1d25;
+$youtubeColor_dark : darken( $youtubeColor, 10%);
+$youtubeColor_darker : darken( $youtubeColor, 15%);
+$youtubeColor_light : lighten( $youtubeColor, 10%);
+$youtubeColor_lighter : lighten( $youtubeColor, 15%);
+
+$instagramColor : #3a648d;
+$instagramColor_dark : darken( $instagramColor, 10%);
+$instagramColor_darker : darken( $instagramColor, 15%);
+$instagramColor_light : lighten( $instagramColor, 10%);
+$instagramColor_lighter : lighten( $instagramColor, 15%);
+
+// transition comun
+$transition : all 200ms ease;
+
+// Definiendo mediaqueries
+$desktop : 1200px;
+$tablet_horizontal : 1024px;
+$tablet_vertical : 850px;
+$phablet : 640px;
+$phone : 320px;
+
+@mixin media-query( $type ){
+    @if $type == desktop-only {
+        @media only screen and (min-width: $desktop) { @content; }
+    }
+    @if $type == desktop-tablet {
+        @media only screen and (min-width: $tablet_horizontal) and (max-width: $desktop) { @content; }
+    }
+    @if $type == tablet-only {
+        @media only screen and (min-width: $tablet_vertical) and (max-width: $tablet_horizontal) { @content; }
+    }
+    @if $type == tablet-down {
+        @media only screen and (max-width: $tablet_horizontal) { @content; }
+    }
+    @if $type == vertical-tablet-down {
+        @media only screen and (max-width: $tablet_vertical) { @content; }
+    }
+    @if $type == phablet-only {
+        @media only screen and (min-width: $phablet) and (max-width: $tablet_vertical - 1) { @content; }
+    }
+    @if $type == phablet-down {
+        @media only screen and (max-width: $phablet) { @content; }
+    }
+    @if $type == phone-only {
+        @media only screen and (max-width: $phone) { @content; }
+    }
+}
+
+@mixin desktop-only { @include media-query(desktop-only) { @content }; }
+@mixin desktop-tablet { @include media-query(desktop-tablet) { @content }; }
+@mixin tablet-only { @include media-query(tablet-only) { @content }; }
+@mixin tablet-down { @include media-query(tablet-down) { @content }; }
+@mixin vertical-tablet-down { @include media-query(vertical-tablet-down) { @content }; }
+@mixin phablet-only { @include media-query(phablet-only) { @content }; }
+@mixin phablet-down { @include media-query(phablet-down) { @content }; }
+@mixin phone-only { @include media-query(phone-only) { @content }; }
+
+@mixin image-replacement {
+    font-size: 0;
+    line-height: 0;
+    color: transparent;
+    font-family: a;
+}
+
+@mixin reset-appearance {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    background: transparent;
+    border-radius: 0;
+    line-height: 1;
+    border: 0;
+    outline: 0;
+    padding: 0;
+}
+
+@mixin image-replacement {
+    font-size: 0;
+    line-height: 0;
+    font-family: a;
+    color: transparent;
+}
+
+@mixin remove-select-arrow {
+    text-indent: 0.01px;
+    text-overflow: '';
+    &::-ms-expand { display: none; }
+}
+
+@mixin bg-fallback( $url, $position: 50% 50% ){
+    background-position: $position;
+    background-repeat: no-repeat;
+    background-image: url("#{$url}.svg");
+    .no-svg & { background-image: url("#{$url}.png"); }
+}
+
+@mixin placeholder {
+    &::-webkit-input-placeholder { @content; }
+    &::-moz-placeholder { @content; }
+    &::-ms-input-placeholder { @content; }
+}
+
+@mixin active-state {
+    .no-touch &:hover, .no-touch &:active, .touch &:active, .touch &:hover {
+        @content;
+    }
+}
+
+@mixin regular-bg( $type ){
+    $color: $color_corporativo !default;
+    $color_light: $color_corporativo_light !default;
+    $color_dark: $color_corporativo_dark !default;
+    $pattern: $pattern_generico !default;
+
+    @if $type == corporativo {
+        $color: $color_corporativo;
+        $color_light: $color_corporativo_light;
+        $color_dark: $color_corporativo_dark;
+    }
+    @if $type == primario {
+        $color: $color_primario;
+        $color_light: $color_primario_light;
+        $color_dark: $color_primario_dark;
+    }
+    @if $type == secundario {
+        $color: $color_secundario;
+        $color_light: $color_secundario_light;
+        $color_dark: $color_secundario_dark;
+    }
+    @if $type == complementario {
+        $color: $color_complementario;
+        $color_light: $color_complementario_light;
+        $color_dark: $color_complementario_dark;
+    }
+    @if $type == neutral {
+        $color: $color_neutral;
+        $color_light: $color_neutral_light;
+        $color_dark: $color_neutral_dark;
+    }
+    @if $type == neutralalt {
+        $color: $color_neutralalt;
+        $color_light: $color_neutralalt_light;
+        $color_dark: $color_neutralalt_dark;
+    }
+
+    background: $color;
+    &.light { background: $color_light; }
+    &.dark { background: $color_dark; }
+    &.pattern { background-image: $pattern; }
+    &.transparent { background: rgba($color, .8); }
+}
+
+@mixin content-box-title-style( $type ){
+    $color: $color_corporativo !default;
+    $color_light: $color_corporativo_light !default;
+    $color_dark: $color_corporativo_dark !default;
+
+    @if $type == corporativo {
+        $color: $color_corporativo;
+        $color_light: $color_corporativo_light;
+        $color_dark: $color_corporativo_dark;
+    }
+    @if $type == primario {
+        $color: $color_primario;
+        $color_light: $color_primario_light;
+        $color_dark: $color_primario_dark;
+    }
+    @if $type == secundario {
+        $color: $color_secundario;
+        $color_light: $color_secundario_light;
+        $color_dark: $color_secundario_dark;
+    }
+    @if $type == complementario {
+        $color: $color_complementario;
+        $color_light: $color_complementario_light;
+        $color_dark: $color_complementario_dark;
+    }
+    @if $type == neutral {
+        $color: $color_neutral;
+        $color_light: $color_neutral_light;
+        $color_dark: $color_neutral_dark;
+    }
+    @if $type == neutralalt {
+        $color: $color_neutralalt;
+        $color_light: $color_neutralalt_light;
+        $color_dark: $color_neutralalt_dark;
+    }
+    @if $type == newbermuda {
+        $color: $color_newbermuda;
+        $color_light: $color_newbermuda_light;
+        $color_dark: $color_newbermuda_dark;
+    }
+
+    .tag { background-color: $color; }
+
+    &.light {
+        .tag { background-color: $color_light; }
+    }
+    &.dark {
+        .tag { background-color: $color_dark; }
+    }
+}
+
+@mixin regular-text( $type ){
+    $color: $color_corporativo !default;
+    $color_light: $color_corporativo_light !default;
+    $color_dark: $color_corporativo_dark !default;
+    $pattern: $pattern_generico !default;
+
+    @if $type == corporativo {
+        $color: $color_corporativo;
+        $color_light: $color_corporativo_light;
+        $color_dark: $color_corporativo_dark;
+    }
+    @if $type == primario {
+        $color: $color_primario;
+        $color_light: $color_primario_light;
+        $color_dark: $color_primario_dark;
+    }
+    @if $type == secundario {
+        $color: $color_secundario;
+        $color_light: $color_secundario_light;
+        $color_dark: $color_secundario_dark;
+    }
+    @if $type == complementario {
+        $color: $color_complementario;
+        $color_light: $color_complementario_light;
+        $color_dark: $color_complementario_dark;
+    }
+    @if $type == neutral {
+        $color: $color_neutral;
+        $color_light: $color_neutral_light;
+        $color_dark: $color_neutral_dark;
+    }
+    @if $type == neutralalt {
+        $color: $color_neutralalt;
+        $color_light: $color_neutralalt_light;
+        $color_dark: $color_neutralalt_dark;
+    }
+
+    color: $color;
+    &.light { color: $color_light; }
+    &.dark { color: $color_dark; }
+    &.transparent { color: rgba($color, .8); }
+}

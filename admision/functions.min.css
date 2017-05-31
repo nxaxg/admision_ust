@@ -1,0 +1,40 @@
+/*
+Error: Invalid US-ASCII character "\xC3"
+        on line 307 of /Users/maxvillegas/Documents/Sites/network-santotomas/wp-content/themes/admision/functions.php
+
+302: ////////////////////////////////////////////////////////////////////////////////
+303: add_action( 'after_setup_theme', 'resgistrar_menus' );
+304: function resgistrar_menus() {
+305:     register_nav_menu( 'secundario', __( 'Menu Secundario' ) );
+306:     register_nav_menu( 'principal_general', __( 'Menu Principal General' ) );
+307:     register_nav_menu( 'principal_admision', __( 'Menu Principal Admisión' ) );
+308:     register_nav_menu( 'footer_principal', __( 'Menu Footer Principal' ) );
+309:     register_nav_menu( 'footer_secundario', __( 'Menu Footer Secundario' ) );
+310:     register_nav_menu( 'conoce_mas', __( 'Menú Conoce más' ) );
+311:     register_nav_menu( 'interes_general', __( 'Informacion de interés general' ) );
+312:     register_nav_menu( 'mapasitio', __( 'Mapa del Sitio' ) );
+
+Backtrace:
+/Users/maxvillegas/Documents/Sites/network-santotomas/wp-content/themes/admision/functions.php:307
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/util.rb:1300:in `rescue in block in find_encoding_error'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/util.rb:1297:in `block in find_encoding_error'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/util.rb:1296:in `each'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/util.rb:1296:in `each_with_index'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/util.rb:1296:in `find_encoding_error'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/util.rb:905:in `check_sass_encoding'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/engine.rb:436:in `check_encoding!'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/engine.rb:392:in `_to_tree'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/engine.rb:381:in `_render_with_sourcemap'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/engine.rb:298:in `render_with_sourcemap'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/exec/sass_scss.rb:391:in `run'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/exec/sass_scss.rb:63:in `process_result'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/exec/base.rb:52:in `parse'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/exec/base.rb:19:in `parse!'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/bin/sass:13:in `<top (required)>'
+/usr/local/bin/sass:23:in `load'
+/usr/local/bin/sass:23:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Invalid US-ASCII character \"\xC3\"\A         on line 307 of /Users/maxvillegas/Documents/Sites/network-santotomas/wp-content/themes/admision/functions.php\A \A 302: ////////////////////////////////////////////////////////////////////////////////\A 303: add_action( 'after_setup_theme', 'resgistrar_menus' );\A 304: function resgistrar_menus() {\A 305:     register_nav_menu( 'secundario', __( 'Menu Secundario' ) );\A 306:     register_nav_menu( 'principal_general', __( 'Menu Principal General' ) );\A 307:     register_nav_menu( 'principal_admision', __( 'Menu Principal Admisión' ) );\A 308:     register_nav_menu( 'footer_principal', __( 'Menu Footer Principal' ) );\A 309:     register_nav_menu( 'footer_secundario', __( 'Menu Footer Secundario' ) );\A 310:     register_nav_menu( 'conoce_mas', __( 'Menú Conoce más' ) );\A 311:     register_nav_menu( 'interes_general', __( 'Informacion de interés general' ) );\A 312:     register_nav_menu( 'mapasitio', __( 'Mapa del Sitio' ) );"; }
